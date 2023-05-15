@@ -7,6 +7,6 @@ public class Varazslo extends Karakter {
 
     @Override
     public String getNev() {
-        return "Varázsló";
+        return "V";
     }
 }
