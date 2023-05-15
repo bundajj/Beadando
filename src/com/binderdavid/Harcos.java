@@ -7,6 +7,6 @@ public class Harcos extends Karakter {
 
     @Override
     public String getNev() {
-        return "Harcos";
+        return "H";
     }
 }
