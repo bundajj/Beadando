@@ -28,7 +28,7 @@ public abstract class Karakter {
     public abstract String getNev();
     public void lep() {
         int lepes = (int) (Math.random() * 3);
-        this.pozicio += lepes - 1;
+        this.pozicio = lepes ;
     }
 
     public void serul(int sebzes) {
