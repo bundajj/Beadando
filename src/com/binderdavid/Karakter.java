@@ -6,7 +6,7 @@ public abstract class Karakter {
     private int pozicio;
 
     public Karakter() {
-        eletero = (int) (Math.random() * 6 + 4); // d6+3 életerő
+        eletero = (int) (Math.random() * 6 + 4);
         pozicio = (int) (Math.random() * 3);
     }
 

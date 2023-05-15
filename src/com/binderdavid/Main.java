@@ -10,7 +10,7 @@ public class Main {
         Karakter[] karakterek = jatekTer.getKarakterek();
 
 
-        //int kor=1;
+
         run(karakterek);
     }
 
