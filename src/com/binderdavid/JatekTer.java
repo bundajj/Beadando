@@ -9,4 +9,8 @@ public class JatekTer {
         karakterek[0]=new Harcos();
         karakterek[1]=new Varazslo();
     }
+
+    public Karakter[] getKarakterek() {
+        return karakterek;
+    }
 }
