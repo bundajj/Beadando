@@ -44,10 +44,10 @@ public class Main {
                 }
 
             }
-            else {
+
                 karakterek[0].lep();
                 karakterek[1].lep();
-            }
+
 
         }
     }
