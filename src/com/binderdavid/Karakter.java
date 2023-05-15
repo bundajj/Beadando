@@ -1,13 +1,14 @@
 package com.binderdavid;
 
-public abstract class Karakter {
-
+public  class Karakter {
+    private String nev;
     private int eletero;
     private int pozicio;
 
-    public Karakter() {
+    public Karakter(String name ) {
         eletero = (int) (Math.random() * 6 + 4);
         pozicio = (int) (Math.random() * 3);
+        this.nev =name;
     }
 
     public int getEletero() {
@@ -22,10 +23,14 @@ public abstract class Karakter {
         return pozicio;
     }
 
+    public String getNev() {
+        return nev;
+    }
+
     public void setPozicio(int pozicio) {
         this.pozicio = pozicio;
     }
-    public abstract String getNev();
+
     public void lep() {
         int lepes = (int) (Math.random() * 3);
         this.pozicio = lepes ;
