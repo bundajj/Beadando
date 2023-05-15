@@ -1,5 +1,7 @@
 package com.binderdavid;
 
+import java.util.Arrays;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -7,51 +9,33 @@ public class Main {
         JatekTer jatekTer = new JatekTer();
         Karakter[] karakterek = jatekTer.getKarakterek();
 
+
         //int kor=1;
         boolean veg = false;
 
         while (!veg) {
 
-            System.out.println(new StringBuilder()
+           if(karakterek[0].getPozicio() != karakterek[1].getPozicio()){
 
-                    .append(karakterek[0].getNev())
-                    .append("_")
-                    .append(karakterek[1].getNev())
-                    .append("-->")
-                    .append(karakterek[0].getNev())
-                    .append(" :")
-                    .append(karakterek[0].getEletero()).append(", ")
-                    .append(karakterek[1].getNev())
-                    .append(":")
-                    .append(karakterek[1].getEletero()).toString());
+               palyaMegjelenito(  palya(karakterek[0],karakterek[1]),karakterek[0],karakterek[1]);
+           }
+
+
+
 
             if (karakterek[0].getPozicio() == karakterek[1].getPozicio()) {
 
 
                 int sebzes = (int) (Math.random() * 6 + 1);
                 karakterek[1].serul(sebzes);
-                System.out.println(new StringBuilder()
-                        .append("X__ --> harc: ")
-                        .append(karakterek[0].getNev())
-                        .append(":")
-                        .append(karakterek[0].getEletero())
-                        .append(", ")
-                        .append(karakterek[1].getNev())
-                        .append(":")
-                        .append(karakterek[1].getEletero()).toString());
+                palyaMegjelenito(  palya(karakterek[0],karakterek[1]),karakterek[0],karakterek[1]);
+
                 if (karakterek[1].getEletero() > 0) {
 
                     int ellenCsapas = (int) (Math.random() * 6 + 1);
                     karakterek[0].serul(ellenCsapas);
-                    System.out.println(new StringBuilder()
-                            .append("X__ --> harc: ")
-                            .append(karakterek[0].getNev())
-                            .append(":")
-                            .append(karakterek[0].getEletero())
-                            .append(", ")
-                            .append(karakterek[1].getNev())
-                            .append(":")
-                            .append(karakterek[1].getEletero()).toString());
+                    palyaMegjelenito(  palya(karakterek[0],karakterek[1]),karakterek[0],karakterek[1]);
+
 
                 }
                 if (karakterek[0].getEletero() <= 0 || karakterek[1].getEletero() <= 0) {
@@ -67,4 +51,36 @@ public class Main {
 
         }
     }
+    public static String[] palya(Karakter k1, Karakter k2){
+         String[]ter=new String[]{"_","_","_"};
+        if(k1.getPozicio()!=k2.getPozicio()){
+
+            ter[k1.getPozicio()]= k1.getNev();
+            ter[k2.getPozicio()]= k2.getNev();
+
+              return ter;
+        }else{
+            ter[k1.getPozicio()]= "X";
+           return ter;
+        }
+
+    }
+    public static  void palyaMegjelenito(String[]palya,Karakter k1,Karakter k2 ){
+          String palyaKiiras="";
+        for (int i = 0; i < palya.length; i++) {
+            palyaKiiras+=palya[i];
+
+        }
+        System.out.println(new StringBuilder()
+                .append(palyaKiiras)
+                .append("-->")
+                .append(k1.getNev())
+                .append(":")
+                .append(k1.getEletero())
+                .append(", ")
+                .append(k2.getNev())
+                .append(":")
+                .append(k2.getEletero()).toString());
+    }
+
 }
