@@ -15,9 +15,7 @@ public  class Karakter {
         return eletero;
     }
 
-    public void setEletero(int eletero) {
-        this.eletero = eletero;
-    }
+
 
     public int getPozicio() {
         return pozicio;
@@ -27,9 +25,7 @@ public  class Karakter {
         return nev;
     }
 
-    public void setPozicio(int pozicio) {
-        this.pozicio = pozicio;
-    }
+
 
     public void lep() {
         int lepes = (int) (Math.random() * 3);
