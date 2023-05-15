@@ -44,7 +44,7 @@ public class Main {
                 }
                 if (karakterek[0].getEletero() <= 0 || karakterek[1].getEletero() <= 0) {
                     veg = true;
-                    System.out.println("A  játék véget ért!");
+                    System.out.println("A  játék véget ért! ");
                 }
 
             }
