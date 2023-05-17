@@ -1,6 +1,6 @@
 package com.binderdavid;
 
-public interface Vedes {
+public interface Pajzsos {
 
     boolean ved(int sebzes);
 }
