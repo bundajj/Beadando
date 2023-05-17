@@ -28,8 +28,7 @@ public  class Karakter {
 
 
     public void lep() {
-        int lepes = (int) (Math.random() * 3);
-        this.pozicio = lepes ;
+        this.pozicio = (int) (Math.random() * 3);
     }
 
     public void serul(int sebzes) {
