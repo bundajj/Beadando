@@ -18,7 +18,7 @@ public class Main {
         boolean veg = false;
 
         while (!veg) {
-
+           //Nem találkoznak
            if(karakterek[0].getPozicio() != karakterek[1].getPozicio()){
 
                palyaMegjelenito(  palya(karakterek[0], karakterek[1]), karakterek[0], karakterek[1]);
@@ -26,19 +26,26 @@ public class Main {
 
 
 
-
+            //harc
             if (karakterek[0].getPozicio() == karakterek[1].getPozicio()) {
 
 
                 int sebzes = (int) (Math.random() * 6 + 1);
+                //Harcos sebzi a varázslót
                 karakterek[1].serul(sebzes);
                 palyaMegjelenitoHarc(  palya(karakterek[0], karakterek[1]), karakterek[0], karakterek[1]);
-
+                 //Varázsló sebzi a harcost
                 if (karakterek[1].getEletero() > 0) {
 
                     int ellenCsapas = (int) (Math.random() * 6 + 1);
-                    karakterek[0].serul(ellenCsapas);
-                    palyaMegjelenitoHarc(  palya(karakterek[0], karakterek[1]), karakterek[0], karakterek[1]);
+                    if (((Vedes)karakterek[0]).ved(sebzes)){
+
+                        System.out.println("A harcos kivédte a sebzést");
+                    }else{
+                        karakterek[0].serul(ellenCsapas);
+                        palyaMegjelenitoHarc(  palya(karakterek[0], karakterek[1]), karakterek[0], karakterek[1]);
+                    }
+
 
 
                 }
