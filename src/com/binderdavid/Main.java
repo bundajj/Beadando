@@ -1,7 +1,5 @@
 package com.binderdavid;
 
-import java.util.Arrays;
-
 public class Main {
 
     public static void main(String[] args) {
@@ -38,7 +36,7 @@ public class Main {
                 if (karakterek[1].getEletero() > 0) {
 
                     int ellenCsapas = (int) (Math.random() * 6 + 1);
-                    if (((Vedes)karakterek[0]).ved(sebzes)){
+                    if (((Pajzsos)karakterek[0]).ved(sebzes)){
 
                         System.out.println("A harcos kivédte a sebzést");
                     }else{
