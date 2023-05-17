@@ -1,18 +1,18 @@
 package com.binderdavid;
 
 public class Varazslo extends Karakter implements Pajzsos {
-    private int vedelem;
+    private int vedelemVarazslat;
     public Varazslo() {
 
         super("V");
-        this.vedelem=(int) (Math.random() *1);
+        this.vedelemVarazslat=(int) (Math.random() *2);
     }
 
 
     @Override
     public boolean ved(int sebzes) {
-        if (this.vedelem>=sebzes){
-
+        if (this.vedelemVarazslat>=sebzes){
+            return true;
 
         }
         return false;
