@@ -59,6 +59,12 @@ public class Main {
                 karakterek[0].lep();
                 karakterek[1].lep();
 
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+
 
         }
     }
