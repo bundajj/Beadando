@@ -29,9 +29,17 @@ public class Main {
 
 
                 int sebzes = (int) (Math.random() * 6 + 1);
-                //Harcos sebzi a varázslót
-                karakterek[1].serul(sebzes);
-                palyaMegjelenitoHarc(  palya(karakterek[0], karakterek[1]), karakterek[0], karakterek[1]);
+
+                if(((Pajzsos)karakterek[1]).ved(sebzes)){
+
+                    System.out.println("A varázsló kivédte a sebzést");
+                }else{
+
+                    //Harcos sebzi a varázslót
+                    karakterek[1].serul(sebzes);
+                    palyaMegjelenitoHarc(  palya(karakterek[0], karakterek[1]), karakterek[0], karakterek[1]);
+                }
+
                  //Varázsló sebzi a harcost
                 if (karakterek[1].getEletero() > 0) {
 
@@ -41,7 +49,7 @@ public class Main {
                         System.out.println("A harcos kivédte a sebzést");
                     }else{
                         karakterek[0].serul(ellenCsapas);
-                        palyaMegjelenitoHarc(  palya(karakterek[0], karakterek[1]), karakterek[0], karakterek[1]);
+                        palyaMegjelenitoHarcEllencsapás(  palya(karakterek[0], karakterek[1]), karakterek[0], karakterek[1]);
                     }
 
 
@@ -108,6 +116,24 @@ public class Main {
                 .append(palyaKiiras)
                 .append("-->")
                 .append("harc: ")
+                .append(k1.getNev())
+                .append(":")
+                .append(k1.getEletero())
+                .append(", ")
+                .append(k2.getNev())
+                .append(":")
+                .append(k2.getEletero()).toString());
+    }
+    public static  void palyaMegjelenitoHarcEllencsapás(String[]palya,Karakter k1,Karakter k2 ){
+        String palyaKiiras="";
+        for (int i = 0; i < palya.length; i++) {
+            palyaKiiras+=palya[i];
+
+        }
+        System.out.println(new StringBuilder()
+                .append(palyaKiiras)
+                .append("-->")
+                .append("ellencsapás: ")
                 .append(k1.getNev())
                 .append(":")
                 .append(k1.getEletero())
