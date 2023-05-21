@@ -16,13 +16,13 @@ public class Main {
 
         while (!veg) {
 
-            if (!karakterekEgyMezonAlnak(karakterek)) {
+            if (!karakterekEgyMezonAlnakHarcosTamad(karakterek)) {
 
                 palyaMegjelenito(palya(karakterek[0], karakterek[1]), karakterek[0], karakterek[1]);
             }
 
 
-            if (karakterekEgyMezonAlnak(karakterek)) {
+            if (karakterekEgyMezonAlnakHarcosTamad(karakterek)) {
 
 
                 int sebzes = 0;
@@ -39,7 +39,7 @@ public class Main {
                 } else {
 
 
-                    karakterek[1].serul(sebzes);
+                    varazsloSerul(sebzes, karakterek, 1);
                     palyaMegjelenitoHarc(palya(karakterek[0], karakterek[1]), karakterek[0], karakterek[1]);
                 }
 
@@ -57,7 +57,7 @@ public class Main {
 
                         System.out.println("A harcos kivédte a sebzést");
                     } else {
-                        karakterek[0].serul(ellenCsapas);
+                        harcosSerul(ellenCsapas, karakterek, 0);
                         palyaMegjelenitoHarcEllencsapás(palya(karakterek[0], karakterek[1]), karakterek[0], karakterek[1]);
                     }
 
@@ -81,6 +81,14 @@ public class Main {
 
 
         }
+    }
+
+    private static void harcosSerul(int ellenCsapas, Karakter[] karakterek, int i) {
+        karakterek[i].serul(ellenCsapas);
+    }
+
+    private static void varazsloSerul(int sebzes, Karakter[] karakterek, int i) {
+        karakterek[i].serul(sebzes);
     }
 
     private static void varaszloLep(Karakter[] karakterek, int i) {
@@ -107,7 +115,7 @@ public class Main {
         return ((Pajzsos) karakterek[i]).ved(sebzes);
     }
 
-    private static boolean karakterekEgyMezonAlnak(Karakter[] karakterek) {
+    private static boolean karakterekEgyMezonAlnakHarcosTamad(Karakter[] karakterek) {
         return karakterek[0].getPozicio() == karakterek[1].getPozicio();
     }
 
